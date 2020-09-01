@@ -9,12 +9,12 @@ const app=express()
 const options={
 	app:app,
 	DataSource:{
-		database:'demo',
-		user:'demo',
-		password:'demo',
+		database:'marmot',
+		user:'marmot',
+		password:'marmot',
 		host:'localhost',
 		dialect:'mysql',
-		directory:__dirname+'/demo_models'
+		directory:__dirname+'/node_modules/foxbat/marmot'
 	},
 	MarmotSource:{
 		database:'marmot',

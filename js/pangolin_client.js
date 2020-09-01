@@ -31,8 +31,7 @@ require(['jquery','underscore','backbone','marionette','liquid','gemini'],Main)
 function Main($,_,Backbone,Marionette,Liquid,Gemini){
 	var app = new Marionette.Application()
 	return Gemini.initialize()
-	.then(app.start)
 	.then(()=>{
-		return app
+		return app.start()
 	})
 }
