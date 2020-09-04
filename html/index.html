@@ -1,8 +1,38 @@
+<style>
+.highlight { background-color:#FFFF00; }
+</style>
 <html>
-	<title>{? title ?} </title>
-	<h1>{? message ?} </h1>
-	<h2>{!translate "I think therefore I am" !}</h2>
-	<h2>{!translate "To be or not to be that is the question" !}</h2>
-	{? LS_COLORS ?}
+	<title>{!translate "Marmot dictionary editor" !} </title>
+	<h1>{!translate "Marmot dictionary editor" !} </h1>
+
+	<table>
+		<tr>
+			<td>
+				<ViewPoint class="PhraseList" model=Phrase />
+			</td>
+			<td valign=top>
+				<table>
+					<tr>
+						<td>
+							<ViewPoint class="TranslationList" model=Translation />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<ViewPoint class="NamespaceList" model=Namespace />
+						</td>
+					</tr>
+			</td>
+		</tr>
+	</table>
 </html>
 <script data-main="pangolin_client" src="requirejs/require.js"></script>
+<script id="phrase_list" type="text/x-handlebars-template">
+{{phrase}}
+</script>
+<script id="translation_list" type="text/x-handlebars-template">
+	<bold>{{locale}}<bold> {{translation}}
+</script>
+<script id="namespace_list" type="text/x-handlebars-template">
+	{{namespace}}
+</script>
